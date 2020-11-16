@@ -6,11 +6,20 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 12:38:34 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/26 12:44:54 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/13 14:41:41 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_bzero(void *p, size_t size)
 {
-	ft_memset(p, size, 0x00);
+	size_t	i;
+
+	i = 0;
+	while (i < size)
+	{
+		*(char*)(p + i) = 0;
+		i++;
+	}
 }

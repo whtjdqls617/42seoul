@@ -3,26 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seocho </var/mail/seocho>                  +#+  +:+       +#+        */
+/*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 16:17:49 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/21 16:59:32 by seocho           ###   ########.fr       */
+/*   Created: 2020/11/16 10:08:11 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 10:22:19 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char *dst, char *src, size_t size)
+#include "libft.h"
+
+size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	if (size > 0)
 	{
-		while(src[i] && i < (size - 1))
-			{
-				dst[i] = src[i];
-				i++;
-			}
-			dest[i] = '\0';
+		while (src[i] && i < (size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
 	while (src[i])
 		i++;

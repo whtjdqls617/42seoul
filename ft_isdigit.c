@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seocho </var/mail/seocho>                  +#+  +:+       +#+        */
+/*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 15:56:51 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/21 15:57:51 by seocho           ###   ########.fr       */
+/*   Created: 2020/11/16 10:04:52 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 10:04:57 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int a)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if(a >= '0' && a <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 10:05:08 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:05:12 by seocho           ###   ########.fr       */
+/*   Created: 2020/11/16 10:05:57 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 10:06:00 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int a)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	if (a >= 32 && a <= 126)
-		return (1);
-	return (0);
+	size_t i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (*(unsigned char*)(str + i) == (unsigned char)c)
+			return ((void*)(str + i));
+		i++;
+	}
+	return (NULL);
 }

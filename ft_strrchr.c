@@ -6,22 +6,28 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 09:59:22 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/26 10:25:55 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/16 10:24:33 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *str, int c)
+#include "libft.h"
+
+char		*ft_strrchr(const char *str, int c)
 {
-	int i;
+	int		i;
+	char	*s;
 
 	i = 0;
-	while (str[i])
+	s = (char *)str;
+	while (s[i])
 		i++;
 	while (i >= 0)
 	{
-		if (str[i] == (char)c)
-			return (&str[i]);
+		if (s[i] == (char)c)
+			return ((char*)s + i);
 		i--;
 	}
-	return (NULL);
+	if (s[i] == (char)c)
+		return ((char*)s);
+	return (0);
 }

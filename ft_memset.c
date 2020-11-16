@@ -3,11 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seocho </var/mail/seocho>                  +#+  +:+       +#+        */
+/*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 15:08:12 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/21 15:47:25 by seocho           ###   ########.fr       */
+/*   Created: 2020/11/16 10:06:50 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 10:18:27 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t	i;
+
+	if (!b)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		*(unsigned char*)(b + i) = (unsigned char)c;
+		i++;
+	}
+	return (b);
+}

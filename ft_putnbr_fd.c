@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 10:05:08 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:05:12 by seocho           ###   ########.fr       */
+/*   Created: 2020/10/28 11:28:42 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/12 20:43:14 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int a)
+static void		write_nbr(int n, int fd)
 {
-	if (a >= 32 && a <= 126)
-		return (1);
-	return (0);
+	if (n >= 10)
+		write_nbr(n / 10, fd);
+	write(fd, &"0123456789"[n % 10], 1);
+}
+
+void			ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		n *= -1;
+		write(fd, "-", 1);
+	}
+	write_nbr(n, fd);
 }

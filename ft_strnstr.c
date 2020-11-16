@@ -6,18 +6,19 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 11:21:52 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/26 12:12:25 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/16 10:24:03 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	if (little[0] == '\0')
 		return ((char*)big);
-
 	i = 0;
 	while (big[i] && i < len)
 	{
@@ -26,9 +27,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 				&& big[i + j] == little[j])
 			j++;
 		if (!little[j])
-				return ((char*)(big + i));
+			return ((char*)(big + i));
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
-	

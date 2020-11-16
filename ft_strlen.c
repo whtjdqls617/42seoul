@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seocho </var/mail/seocho>                  +#+  +:+       +#+        */
+/*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 16:13:28 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/21 16:16:58 by seocho           ###   ########.fr       */
+/*   Created: 2020/11/16 10:08:27 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 10:08:31 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int i;
+
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);

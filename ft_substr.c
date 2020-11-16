@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 10:05:08 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:05:12 by seocho           ###   ########.fr       */
+/*   Created: 2020/10/28 12:02:34 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 13:05:42 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int a)
+char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (a >= 32 && a <= 126)
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	j;
+	char	*new;
+
+	new = (char*)malloc(sizeof(char) * (len + 1));
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			new[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	new[j] = 0;
+	return (new);
 }

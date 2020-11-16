@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seocho </var/mail/seocho>                  +#+  +:+       +#+        */
+/*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 15:58:12 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/21 16:03:14 by seocho           ###   ########.fr       */
+/*   Created: 2020/11/16 10:03:43 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 10:03:47 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int a)
+#include "libft.h"
+
+int		ft_isalnum(int a)
 {
-	if(ft_isdigit(a) || ft_isalpha(a))
+	if (ft_isdigit(a) || ft_isalpha(a))
 		return (1);
 	return (0);
 }

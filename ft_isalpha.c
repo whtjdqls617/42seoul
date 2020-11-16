@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seocho </var/mail/seocho>                  +#+  +:+       +#+        */
+/*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 15:47:37 by seocho            #+#    #+#             */
-/*   Updated: 2020/10/21 15:56:31 by seocho           ###   ########.fr       */
+/*   Created: 2020/11/16 10:04:13 by seocho            #+#    #+#             */
+/*   Updated: 2020/11/16 10:04:18 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int a)
+#include "libft.h"
+
+int		ft_isalpha(int a)
 {
-	if((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z'))
+	if ((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z'))
 		return (1);
 	return (0);
 }
