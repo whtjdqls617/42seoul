@@ -6,7 +6,7 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 10:06:37 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:06:39 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/17 17:05:51 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int i;
 
+	if (!dest && !src)
+		return (NULL);
 	if (dest > src)
 	{
 		i = (int)n - 1;

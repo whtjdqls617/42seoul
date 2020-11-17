@@ -6,7 +6,7 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 10:10:05 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:27:54 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/18 00:38:04 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,43 +19,38 @@ static int		ft_abs(int n)
 	return (n);
 }
 
-static void		ft_strrev(char *str)
+static int		get_len(int n)
 {
-	size_t		len;
-	size_t		i;
-	char		temp;
+	int			len;
 
-	len = ft_strlen(str);
-	i = 0;
-	while (i < len / 2)
+	len = (n <= 0) ? 1 : 0;
+	while (n != 0)
 	{
-		temp = str[i];
-		str[i] = str[len - i - 1];
-		str[len - i - 1] = temp;
-		i++;
+		n = n / 10;
+		len++;
 	}
+	return (len);
 }
 
 char			*ft_itoa(int n)
 {
 	char		*str;
 	int			minus;
-	int			i;
+	int			len;
 
-	minus = (n < 0);
-	if (!(str = ft_calloc(11 + minus, sizeof(*str))))
-		return (0);
-	if (n == 0)
-		str[0] = '0';
-	i = 0;
-	while (n != 0)
+	minus = (n < 0) ? -1 : 1;
+	len = get_len(n);
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	str[len] = 0;
+	len--;
+	while (len >= 0)
 	{
-		str[i] = ft_abs(n % 10) + '0';
-		n = n / 10;
-		i++;
+		str[len] = '0' + ft_abs(n % 10);
+		n = ft_abs(n / 10);
+		len--;
 	}
-	if (minus == 1)
-		str[i] = '-';
-	ft_strrev(str);
+	if (minus == -1)
+		str[0] = '-';
 	return (str);
 }

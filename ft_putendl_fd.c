@@ -6,7 +6,7 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 11:17:57 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/12 16:07:57 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/18 01:07:40 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	char c;
 
+	if (!s)
+		return ;
 	c = '\n';
 	write(fd, s, ft_strlen(s));
 	write(fd, &c, 1);

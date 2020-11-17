@@ -6,7 +6,7 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 10:10:55 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:30:13 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/18 01:03:37 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static char	find_set(char c, char const *set)
 	size_t i;
 
 	i = 0;
+	if (!set)
+		return (0);
 	while (set[i])
 	{
 		if (set[i] == c)
@@ -33,13 +35,16 @@ char		*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
 	while (start < end && find_set(s1[start], set))
 		start++;
 	while (end > start && find_set(s1[end - 1], set))
 		end--;
-	new = (char*)malloc(sizeof(char) * (end - start + 1));
+	if (!(new = (char*)malloc(sizeof(char) * (end - start + 1))))
+		return (NULL);
 	i = 0;
 	while (start < end)
 	{

@@ -6,7 +6,7 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 10:10:43 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:10:46 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/18 01:04:13 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*new;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	if (!(new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);

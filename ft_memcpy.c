@@ -6,7 +6,7 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 10:06:25 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/16 10:18:02 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/17 17:00:43 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t i;
 
-	if (!dest)
+	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	while (i < n)
