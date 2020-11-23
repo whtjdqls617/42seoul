@@ -6,7 +6,7 @@
 /*   By: seocho <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 12:12:38 by seocho            #+#    #+#             */
-/*   Updated: 2020/11/23 15:37:38 by seocho           ###   ########.fr       */
+/*   Updated: 2020/11/23 18:25:10 by seocho           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int			is_number(char c)
 
 int			ft_atoi(const char *str)
 {
-	long	result;
-	long	minus;
-	size_t	i;
+	unsigned long long	result;
+	int					minus;
+	int					i;
 
 	i = 0;
 	minus = 1;
@@ -51,11 +51,11 @@ int			ft_atoi(const char *str)
 	while (is_number(str[i]))
 	{
 		result = (10 * result) + (str[i] - '0');
-		if (result > 2147483647 && minus == 1)
-			return (-1);
-		if (result > 2147483648 && minus == -1)
-			return (0);
 		i++;
 	}
+	if (result > 9223372036854775807 && minus == 1)
+		return (-1);
+	if (result >= 9223372036854775807 && minus == -1)
+		return (0);
 	return (result * minus);
 }
